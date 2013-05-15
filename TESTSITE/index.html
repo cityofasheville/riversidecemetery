@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Riverside Cemetery &middot; Beta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../TESTSITE/css/bootstrap.css" rel="stylesheet">
+    <link href="../TESTSITE/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="SHORTCUT ICON" href="http://ashevillenc.gov/Portals/0/favicon.ico" />
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../TESTSITE/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../TESTSITE/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../TESTSITE/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../TESTSITE/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../TESTSITE/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../TESTSITE/ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Riverside Cemetery</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#fees">Fees</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://www.ashevillenc.gov/">City of Asheville</a></li>
+                    <li><a href="http://opendatacatalog.ashevillenc.gov/">Open Data Asheville</a></li>
+                    <li><a href="https://www.facebook.com/pages/Riverside-Cemetery/116156805072088">Join Us on Facebook</a></li>
+                    <li><a href="http://www.flickr.com/photos/66019045@N04/sets/72157630529238250/">Photos on Flickr</a></li>
+                    <li><a href="http://maps.google.com/maps/ms?hl=en&ie=UTF8&msa=0&msid=108370934995525527319.00044c197e3343f7bd83b&ll=35.600648,-82.543459&spn=0.053667,0.111237&z=14&iwloc=00044c93a8d250cb57632">Directions</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Downloads</li>
+                    <li><a href="http://www.ashevillenc.gov/Portals/0/city-documents/parks/parks_docs/riverside/riversidewalkingtour2012[1].pdf">Download Walking Tour PDF</a></li>
+                    <li><a href="http://www.ashevillenc.gov/Portals/0/city-documents/parks/parks_docs/riverside/walkingtourmap2012c[1].pdf">Download Walking Map PDF</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="https://sphotos-b.xx.fbcdn.net/hphotos-prn1/277619_468787819808983_1345812930_o.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Explore Riverside Cemetery</h1>
+              <p class="lead">Search our Interment database</p>
+              <a class="btn btn-large btn-primary" href="http://gis.ashevillenc.gov/riverside/new/map.html">Search the Map!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-prn1/526370_562123817142049_497421078_n.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Take the Historic Tour</h1>
+              <p class="lead">Take a tour of historic figures buried at Riverside Cemetery.</p>
+              <a class="btn btn-large btn-primary" href="http://gis.ashevillenc.gov/mapasheville/historictour/">Learn more</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-ash3/246516_467162456638186_1332342264_n.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Want to be buried at Riverside Cemetery</h1>
+              <p class="lead">Contact the cemetery manager for all burial information.</p>
+              <a class="btn btn-large btn-primary" href="#fees">View More Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+         <a href="http://gis.ashevillenc.gov/riverside/new/map.html"><img class="img-circle" src="../TESTSITE/img/BM1132.jpg"></a>
+          <h2>Search the Map</h2>
+          <p>Curioius about who is buried at Riverside Cemetery, or are looking for a loved one, find them on our <em>new</em> interactive map!</p>
+          <p><a class="btn" href="http://gis.ashevillenc.gov/riverside/new/map.html">View the Map &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <a href="http://gis.ashevillenc.gov/mapasheville/historictour/"><img class="img-circle" src="http://farm8.static.flickr.com/7269/7563525608_b3928c48b2_b.jpg"></a>   
+          <h2>Historic Tour</h2>
+          <p>Come explore the history of Riverside Cemetery on the historic tour.</p>
+          <p><a class="btn" href="http://gis.ashevillenc.gov/mapasheville/historictour/">Take the Tour &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <a href="#fees"><img class="img-circle" src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-snc6/408385_468104799877285_1949215556_n.jpg"></a>
+          <h2>Fees</h2>
+          <p>Burail costs at Riverside Cemetery.</p>
+          <p><a class="btn" href="#fees">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="about">
+        <img class="featurette-image pull-right" src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-frc1/p480x480/580743_477636972257401_574122266_n.jpg">
+        <h2 class="featurette-heading">About.<span class="muted">us.</span></h2>
+        <p class="lead"><strong>Riverside Cemetery is not just a place where families come to visit a friend or a loved one. It is a place of beauty - a place where you can walk, take photographs, paint and visit the grave sites of prominent writers Thomas Wolfe and O. Henry.</strong>
+                            </br>
+                                </br>
+                                    Riverside Cemetery also offers visitors a unique journey into Ashevilles past. Both guided and self-guided walking tour information is available. Tours offer insight into cultural diversity, architecture,</br>
+                                     religious customs, and landscape design. More than 2,000 visitors tour the cemetery each year.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="fees">
+        <img class="featurette-image pull-left" src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-prn1/534823_560608557293575_91925643_n.jpg">
+        <h2 class="featurette-heading">Riverside Cemetery.<span class="muted">fees.</span></h2>
+        <p class="lead"><strong>Interment Fees:</strong>
+            </br>
+                   <em>Adults</em>
+                        </br>Mon - Fri before 4:30pm        $1200.00</br>
+                    <em>Weekends, Holidays</em>
+                    </br>or after 4:30pm               $1300.00</br>
+                </br>
+                    <em>Infant/Children</em>        $350.00</br>
+                </br>
+                    <em>Cremations</em>
+                        </br>Mon - Fri before 4:30pm        $375.00</br>
+                    <em>Weekends, Holidays</em>
+                        </br>Or after 4:30pm                $475.00</br>
+                </br>
+                    <strong>Grave Prices:</strong>
+                    </br>
+                        Adults Spaces (40sqft)             $1300.00</br>
+                        + 25% for non-city residents       $1625.00</br>
+                        Infant/Child Space                 $100.00</br>
+                </br>
+                    <strong>Other Fees:</strong>
+                </br>
+                        Tent/Chairs Set-up                     $200.00</br>
+                        Transfer Fee                           $100.00</br>
+                        Monumnet Permit                        $75.00</br>
+                        Disinterment                           $100.00</br>
+                        DSS/Indigent                           $100.00
+                     
+        </p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="contact">
+        <img class="featurette-image pull-right" src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-snc7/402000_552903278064103_335592587_n.jpg">
+        <h2 class="featurette-heading">Contact.<span class="muted">info.</span></h2>
+        <p class="lead"><strong>Contact Information</strong>
+        </br>Riverside Cemetery
+        </br>53 Birch Street, Asheville, NC 28801
+        </br>Cemetery Hours: 8 a.m.-4:30 p.m., M-F
+        </br>Gates are open everyday from:
+        </br>
+            <ul>
+                <li>7am-8pm April 1 - October 31</li>
+                <li>7am-6pm November 1 - March 31</li>
+           </ul>
+           </br>Phone: (828) 350-2066
+           </br>E-mail: jdarty@ashevillenc.gov
+           </br>Office Hours: by appointment only,
+           </br>call (828) 350-2066 to schedule an appointment
+        </p>
+      </div>
+      
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="feedback">
+        <img class="featurette-image pull-left" src="https://lh5.googleusercontent.com/-PEoOOUcdKFo/AAAAAAAAAAI/AAAAAAAAAV4/lUA6opDd3kw/s250-c/photo.jpg">
+        <h2 class="featurette-heading">Feedback.<span class="muted">help us help you.</span></h2>
+        <p class="lead"><strong>Survey:</strong></p>
+        Please take this short survey to help us continue to improve our quailty of service.
+        Thank you! <a href="http://www.surveymonkey.com/s/PGY9YRG">Click here to take survey</a>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../TESTSITE/js/jquery.js"></script>
+    <script src="../TESTSITE/js/bootstrap-transition.js"></script>
+    <script src="../TESTSITE/js/bootstrap-alert.js"></script>
+    <script src="../TESTSITE/js/bootstrap-modal.js"></script>
+    <script src="../TESTSITE/js/bootstrap-dropdown.js"></script>
+    <script src="../TESTSITE/js/bootstrap-scrollspy.js"></script>
+    <script src="../TESTSITE/js/bootstrap-tab.js"></script>
+    <script src="../TESTSITE/js/bootstrap-tooltip.js"></script>
+    <script src="../TESTSITE/js/bootstrap-popover.js"></script>
+    <script src="../TESTSITE/js/bootstrap-button.js"></script>
+    <script src="../TESTSITE/js/bootstrap-collapse.js"></script>
+    <script src="../TESTSITE/js/bootstrap-carousel.js"></script>
+    <script src="../TESTSITE/js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+   <script src="../TESTSITE/js/holder.js"></script>
+  </body>
+</html>
