@@ -4604,6 +4604,7 @@ a.thumbnail:focus {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   white-space: normal;
 }
+/*Added Margin Left for map dispay */
 .popover.top {
   margin-top: -10px;
   margin-left: -25px;
@@ -4633,10 +4634,7 @@ a.thumbnail:focus {
   display: none;
 }
 .popover-content {
-  padding: 9px 14px;
-  width: 1em;
-  
-  
+  padding: 9px 14px;  
 }
 .popover .arrow,
 .popover .arrow:after {
