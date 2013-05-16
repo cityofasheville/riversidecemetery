@@ -4606,7 +4606,7 @@ a.thumbnail:focus {
 }
 .popover.top {
   margin-top: -10px;
-  margin-left: -10px;
+  margin-left: -20px;
 }
 .popover.right {
   margin-left: 10px;
