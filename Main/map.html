@@ -506,9 +506,11 @@ var zoom = new L.control.zoom();
 
 			var div = L.DomUtil.create('div', 'help');
 			
-			div.innerHTML = '<div class="popover-inner myclass"><a id="help" data-original-title="Instructions" data-trigger="click" data-content="Zoom into individaul graves, or search by last name." data-placement="top" rel="popover" class="btn" href="#">help</a></div>';
+			div.innerHTML = '<a id="help" data-original-title="Instructions" data-trigger="click" data-content="Zoom into individaul graves, or search by last name." data-placement="top" rel="popover" class="btn" href="#">help</a>';
 			$(function (){ 
-			    $("#help").popover();
+			    $("#help").popover({
+  					template: '<div class="popover"><div class="arrow"></div><div class="popover-inner myclass"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+				});
                  });
 			
 			return div;
