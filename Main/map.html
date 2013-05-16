@@ -18,12 +18,12 @@
     
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
     <link rel="stylesheet" href="../Main/js/Leaflet.markercluster-master/dist/MarkerCluster.css" />
-	<link rel="stylesheet" href="../Main/js/Leaflet.markercluster-master/dist/MarkerCluster.Default.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="../dist/MarkerCluster.Default.ie.css" /><![endif]-->
-	<!--<script src="../new/leafletajax/dist/leaflet.ajax.js"></script>-->
-	<script src="../Main/js/Leaflet.markercluster-master/dist/leaflet.markercluster-src.js"></script>
-	<script src="../Main/js/azgs-leaflet-master/js/azgs-leaflet/TileLayer.ESRI.js"></script>
-	<script src="../Main/data/gravedata.js"></script>
+    <link rel="stylesheet" href="../Main/js/Leaflet.markercluster-master/dist/MarkerCluster.Default.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="../dist/MarkerCluster.Default.ie.css" /><![endif]-->
+    <!--<script src="../new/leafletajax/dist/leaflet.ajax.js"></script>-->
+    <script src="../Main/js/Leaflet.markercluster-master/dist/leaflet.markercluster-src.js"></script>
+    <script src="../Main/js/azgs-leaflet-master/js/azgs-leaflet/TileLayer.ESRI.js"></script>
+    <script src="../Main/data/gravedata.js"></script>
 
     <style>
 
@@ -277,6 +277,7 @@
         
     }
     
+    
     </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -502,7 +503,7 @@ var zoom = new L.control.zoom();
 
 			var div = L.DomUtil.create('div', 'help');
 			
-			div.innerHTML = '<a id="help" data-original-title="Instructions" data-trigger="click" data-content="Zoom into individaul graves, or search by last name." data-placement="top" rel="popover" class="btn" href="#">help</a>';
+			div.innerHTML = '<a id="help" data-original-title="Instructions" data-trigger="click" data-content="Zoom into individaul graves, or search by last name."  data-placement="top" rel="popover" class="btn" href="#">help</a>';
 			$(function (){ 
 			    $("#help").popover();
                  });
