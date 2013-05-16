@@ -390,14 +390,12 @@ var zoom = new L.control.zoom();
           
 //Adding WMS layers from geoserver
 			
- 
-		
-   var lots = L.tileLayer.wms("http://opendataserver.ashevillenc.gov:80/geoserver/wms", {
+  var lots = L.tileLayer.wms("http://opendataserver.ashevillenc.gov:80/geoserver/wms", {
          layers: 'coa_cemetery_lots',
          format: 'image/png',
          maxZoom: 25,
          transparent: true,
-         zIndex: 3
+         zIndex: 4
  
    }).addTo(map);
    
@@ -407,18 +405,31 @@ var zoom = new L.control.zoom();
          format: 'image/png',
          maxZoom: 25,
          transparent: true,
-         zIndex: 2,
+         zIndex: 3,
          attribution: '<a href="ashevillenc.gov" >City of Asheville</a>'
+ 
+   }).addTo(map);
+   
+    var balloon = L.tileLayer.wms("http://opendataserver.ashevillenc.gov:80/geoserver/wms", {
+         layers: 'topp:RiversideCemeteryBallonImage',
+         format: 'image/png',
+         maxZoom: 25,
+         transparent: false,
+         zIndex: 1
+         
  
    }).addTo(map);
    
      
    var cloudmade = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png', {
-			attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-			key: 'BC9A493B41014CAABB98F0471D759707',
-			styleId: 22677,
-			zIndex: 1
-		}).addTo(map);
+	attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+	key: 'BC9A493B41014CAABB98F0471D759707',
+	styleId: 22677,
+	zIndex: 2
+	
+   }).addTo(map);
+		
+  
       
 //Ajax Sucess Function
   // function loadGeoJson(data) { 
