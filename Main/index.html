@@ -524,7 +524,7 @@
 	  
 	  var data = [];
 	  for(each in gravedata){
-			var last = gravedata[each].feature.properties.last_name;
+			var last = gravedata.feature[each].properties.last_name;
 			var first = gravedata[each].feature.properties.first_name;
 			var middle = gravedata[each].feature.properties.middle_name;
 			var section = gravedata[each].feature.properties.section;
