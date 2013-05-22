@@ -532,15 +532,17 @@
 			var gravenum = gravedata.features[each].properties.grave_num;
 			var interment = gravedata.features[each].properties.interment_num;
 			var age = gravedata.features[each].properties.age;
+			var fullname = last + ", " + first + " " + middle;
 			
-			data.push({last: last, first: first, middle: middle, section: section, lot: lot, gravenum: gravenum, interment: interment, age: age});
-	  
+			data.push({label: fullname, value: fullname, last: last, first: first, middle: middle, section: section, lot: lot, gravenum: gravenum, interment: interment, age: age});
+	$(function (){
 	  $('#search').typeahead({
 		source: data,
 		minLength: 2,
 		updater: function(item){
 			return $('#Int').append('<p>item.interment</p>');
 		}
+	  });
 	});
 	  }
     </script>
