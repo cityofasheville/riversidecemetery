@@ -416,7 +416,7 @@
         <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
         <h2 class="featurette-heading">Records.<span class="muted">riverside cemetery.</span></h2>
         <p class="lead">Search the Interment Files</p>
-		<input type="text" id="search">
+		<input type="text" id="search"  data-provide="typeahead">
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -540,7 +540,7 @@
 		source: data,
 		minLength: 2,
 		updater: function(item){
-			return $('#Int').append('<p>item.interment</p>');
+			$('#Int').append('<p>item.interment</p>');
 		}
 	  });
 	});
