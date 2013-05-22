@@ -523,15 +523,15 @@
       }(window.jQuery)
 	  
 	  var data = [];
-	  for(each in gravedata){
-			var last = gravedata.feature[each].properties.last_name;
-			var first = gravedata[each].feature.properties.first_name;
-			var middle = gravedata[each].feature.properties.middle_name;
-			var section = gravedata[each].feature.properties.section;
-			var lot = gravedata[each].feature.properties.lot;
-			var gravenum = gravedata[each].feature.properties.grave_num;
-			var interment = gravedata[each].feature.properties.interment_num;
-			var age = gravedata[each].feature.properties.age;
+	  for(each in gravedata.features){
+			var last = gravedata.features[each].feature.properties.last_name;
+			var first = gravedata.features[each].feature.properties.first_name;
+			var middle = gravedata.features[each].feature.properties.middle_name;
+			var section = gravedata.features[each].feature.properties.section;
+			var lot = gravedata.features[each].feature.properties.lot;
+			var gravenum = gravedata.features[each].feature.properties.grave_num;
+			var interment = gravedata.features[each].feature.properties.interment_num;
+			var age = gravedata.features[each].feature.properties.age;
 			
 			data.push({last: last, first: first, middle: middle, section: section, lot: lot, gravenum: gravenum, interment: interment, age: age});
 	  
