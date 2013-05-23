@@ -416,8 +416,9 @@
         <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
         <h2 class="featurette-heading">Records.<span class="muted">riverside cemetery.</span></h2>
         <p class="lead">Search the Interment Files</p>
-		<input type="text" id="search"  data-provide="typeahead">
-		<table class="table table-striped">
+		
+  
+		<table class="table table-striped" id='datatable'>
 			<thead>
 				<tr>
 					<th>Interment #</th>
@@ -445,6 +446,7 @@
 				</tr>	
 			</tbody>
 		</table>
+  
       </div>
 
       <hr class="featurette-divider">
@@ -514,7 +516,9 @@
     <script src="../Main/js/bootstrap-collapse.js"></script>
     <script src="../Main/js/bootstrap-carousel.js"></script>
     <script src="../Main/js/bootstrap-typeahead.js"></script>
-	<script src="../Main/data/gravedata.js"></script>
+    <script src="../Main/js/jquery.dataTables.js"></script>
+    <script src="../Main/js/datatable.bootstrap.js"></script>
+	  <script src="../Main/data/gravedata.js"></script>
     <script>
       !function ($) {
         $(function(){
@@ -532,9 +536,28 @@
 			var gravenum = gravedata.features[each].properties.grave_num;
 			var interment = gravedata.features[each].properties.interment_num;
 			var age = gravedata.features[each].properties.age;
+      var url = gravedata.features[each].properties.url_photo
 			var fullname = last + ", " + first + " " + middle;
 			
-			data.push([fullname, last, first, middle, section, lot, gravenum, interment, age]);
+			data.push(['<img src=' + '"' + url + '"' + '/>', fullname, last, first, middle, section, lot, gravenum, interment, age]);
+
+      $(document).ready(function() {
+          $('#datatable').dataTable( {
+              "sPaginationType": "bootstrap",
+              "aaData": data,
+              "aoColumns": [
+            { "sTitle": "Image"},
+            { "sTitle": "Full Name" },
+            { "sTitle": "Last Name" },
+            { "sTitle": "First Name" },
+            { "sTitle": "Section", "sClass": "center" },
+            { "sTitle": "Lot", "sClass": "center" },
+            { "sTitle": "Grave #", "sClass": "center"},
+            { "sTitle": "Interment #", "sClass": "center"},
+            { "sTitle": "Age", "sClass": "center"}
+        ]
+          } );
+      } );
 	
 	  }
     </script>
