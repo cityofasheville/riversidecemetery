@@ -384,7 +384,7 @@
         <div class="span4">
           <a href="#history"><img class="img-circle" src="http://farm6.staticflickr.com/5338/8768926353_e82dc6f767.jpg"></a>
           <h2>Records</h2>
-          <p><a class="btn" href="#history">View details &raquo;</a></p>
+          <p><a class="btn" href="#records">View details &raquo;</a></p>
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 
@@ -395,7 +395,7 @@
 
       <div class="featurette" id="about">
         <img class="featurette-image pull-right" src="http://farm6.staticflickr.com/5323/8773736462_6a780d3cfb.jpg">
-        <h2 class="featurette-heading">Riverside.<span class="muted">cemetery.</span></h2>
+        <h2 class="featurette-heading">About.<span class="muted">riverside cemetery.</span></h2>
         <p class="lead">Riverside Cemetery is not just a place where families come to visit a friend or a loved one. It is a place of beauty - a place where you can walk, take photographs, paint and visit the grave sites of prominent writers Thomas Wolfe and O. Henry.  Walking Tours are available at the cemetery office and can offer a unique journey into Asheville’s past. More than 4,000 visitors tour the cemetery each year. <br /><br />
 						City of Asheville’s Riverside Cemetery is located in the Montford <br /> Historic District, a short walk or drive from downtown. The cemetery<br /> features more than 87 acres of landscaped grounds. The cemetery averages approximately 50 services each year.<br /><br />
 						Services offered include grave sales, historical and genealogical research, cemetery tours, landscape maintenance, and assistance with monument purchases. Call <span class="text-info">(828) 350-2066 </span>to schedule an appointment.</p>
@@ -405,9 +405,46 @@
 
       <div class="featurette" id="history">
         <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
-        <h2 class="featurette-heading">Riverside Cemetery.<span class="muted">history.</span></h2>
+        <h2 class="featurette-heading">History.<span class="muted">riverside cemetery.</span></h2>
         <p class="lead">Riverside Cemetery was founded on August 4th, 1885 by the Asheville Cemetery Company.  It was planned as a garden style cemetery which would serve well as both a burial ground and public park. After almost 70 years of ownership, the Asheville Cemetery Company sold Riverside to the City of Asheville in 1952. The City made many improvements to the cemetery, including opening new sections for interments and paving over 3.5 miles of roads inside the cemetery gates.  Riverside was named a Buncombe County Treasure Tree Preserve in 1997. Today, we are operated by the City of Asheville Parks, Recreation and Cultural Arts Department.
         </p>
+      </div>
+	  
+	  <hr class="featurette-divider">
+
+      <div class="featurette" id="records">
+        <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
+        <h2 class="featurette-heading">Records.<span class="muted">riverside cemetery.</span></h2>
+        <p class="lead">Search the Interment Files</p>
+		<input type="text" id="search"  data-provide="typeahead">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Interment #</th>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Middle Name</th>
+					<th>Title</th>
+					<th>Age</th>
+					<th>Section</th>
+					<th>Lot</th>
+					<th>Grave</th>	
+				<tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="Int"></td>
+					<td id="LN"></td>
+					<td id="FN"></td>
+					<td id="MN"></td>
+					<td id="T"></td>
+					<td id="A"></td>
+					<td id="Sec"></td>
+					<td id="Lot"></td>
+					<td id="Grave"></td>
+				</tr>	
+			</tbody>
+		</table>
       </div>
 
       <hr class="featurette-divider">
@@ -477,12 +514,29 @@
     <script src="../Main/js/bootstrap-collapse.js"></script>
     <script src="../Main/js/bootstrap-carousel.js"></script>
     <script src="../Main/js/bootstrap-typeahead.js"></script>
+	<script src="../Main/data/gravedata.js"></script>
     <script>
       !function ($) {
         $(function(){
           $('#myCarousel').carousel()
         })
       }(window.jQuery)
+	  
+	  var data = [];
+	  for(each in gravedata.features){
+			var last = gravedata.features[each].properties.last_name;
+			var first = gravedata.features[each].properties.first_name;
+			var middle = gravedata.features[each].properties.middle_name;
+			var section = gravedata.features[each].properties.section;
+			var lot = gravedata.features[each].properties.lot;
+			var gravenum = gravedata.features[each].properties.grave_num;
+			var interment = gravedata.features[each].properties.interment_num;
+			var age = gravedata.features[each].properties.age;
+			var fullname = last + ", " + first + " " + middle;
+			
+			data.push([fullname, last, first, middle, section, lot, gravenum, interment, age]);
+	
+	  }
     </script>
    <script src="../Main/js/holder.js"></script>
   </body>
