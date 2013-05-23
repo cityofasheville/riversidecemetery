@@ -413,11 +413,11 @@
 	  <hr class="featurette-divider">
 
       <div class="featurette" id="records">
-        <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
+        <img class="featurette-image pull-right" src="http://farm8.staticflickr.com/7357/8768925555_6581451547.jpg">
         <h2 class="featurette-heading">Records.<span class="muted">riverside cemetery.</span></h2>
         <p class="lead">Search the Interment Files</p>
 		
-  <table id="datatable"></table>
+  <table id="datatable" class="table table-striped"></table>
 		<!-- <table class="table table-striped" id='datatable'>
 			<thead>
 				<th></th>
@@ -534,7 +534,7 @@
 			var gravenum = gravedata.features[each].properties.grave_num;
 			var interment = gravedata.features[each].properties.interment_num;
 			var age = gravedata.features[each].properties.age;
-      var url = gravedata.features[each].properties.url_photo
+			var url = gravedata.features[each].properties.url_photo;
 			var fullname = last + ", " + first + " " + middle;
 			
 			data.push(['<img src=' + '"' + url + '"' + '/>', fullname, last, first, middle, section, lot, gravenum, interment, age]);
@@ -543,7 +543,10 @@
           $('#datatable').dataTable( {
               "sPaginationType": "bootstrap",
               "aaData": data,
+			  "bProcessing":true,
+			  "bDeferRender": true,
 			  "bRetrieve": true,
+			  "iDisplayLength": 5,
               "aoColumns": [
             { "sTitle": "Image"},
             { "sTitle": "Full Name" },
