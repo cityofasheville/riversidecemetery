@@ -501,6 +501,7 @@ var zoom = new L.control.zoom();
 				minLength: 3,
 				select: function( event, ui ) {
 					map.fitBounds([ui.item.LatLng]);
+					graves.popup().openPopup();
 					}
 					
 			});
