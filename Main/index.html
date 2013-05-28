@@ -510,9 +510,9 @@
 			var interment = gravedata.features[each].properties.interment_num;
 			var age = gravedata.features[each].properties.age;
 			var url = gravedata.features[each].properties.url_photo;
-			var fullname = last + ", " + first + " " + middle;
+			var type = gravedata.features[each].properties.type;
 			
-			data.push(['<img src=' + '"' + url + '"' + '/>', fullname, last, first, middle, section, lot, gravenum, interment, age]);
+			data.push(['<img src=' + '"' + url + '"' + '/>', last, first, middle, section, lot, gravenum, interment, age, type]);
 
       $(document).ready(function() {
           $('#datatable').dataTable( {
@@ -524,7 +524,6 @@
 			  "iDisplayLength": 10,
               "aoColumns": [
             { "sTitle": "Image"},
-            { "sTitle": "Full Name" },
             { "sTitle": "Last Name" },
             { "sTitle": "First Name" },
 			{ "sTitle": "Middle Name" },
@@ -532,7 +531,8 @@
             { "sTitle": "Lot", "sClass": "center" },
             { "sTitle": "Grave #", "sClass": "center"},
             { "sTitle": "Interment #", "sClass": "center"},
-            { "sTitle": "Age", "sClass": "center"}
+            { "sTitle": "Age", "sClass": "center"},
+			{ "sTitle": "Type" }
         ]
           } );
       } );
