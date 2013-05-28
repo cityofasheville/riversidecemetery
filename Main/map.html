@@ -357,7 +357,7 @@
 	<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 	<script src="../Main/js/Leaflet.markercluster-master/dist/leaflet.markercluster-src.js"></script>
     <script src="../Main/js/azgs-leaflet-master/js/azgs-leaflet/TileLayer.ESRI.js"></script>
-    <script src="../Main/data/gravedata.js"></script>
+	<script src="../Main/data/gravedata.json"></script>
     <script src="../Main/js/jquery.js"></script>
     <script src="../Main/js/bootstrap-transition.js"></script>
     <script src="../Main/js/bootstrap-alert.js"></script>
@@ -455,7 +455,7 @@ var zoom = new L.control.zoom();
       }
     
     function popUp(feature, layer) {
-               layer.bindPopup('<strong>Name: </strong>' + feature.properties.last_name + ',' + ' ' + feature.properties.first_name + '' + feature.properties.middle_name + '</br>' + '<strong>Section/Lot/Grave #: </strong>' + feature.properties.sec_lot_grave + '</br>' + '<strong>Age: </strong>' + feature.properties.age + '</br>' + '<strong>Military: </strong>' + feature.properties.military + '</br>' + '</br>' +'<img src=' + '"' + feature.properties.url_photo + '"' + '/>');
+               layer.bindPopup('<strong>Name: </strong>' + feature.properties.last_name + ',' + ' ' + feature.properties.first_name + '' + feature.properties.middle_name + '</br>' + '<strong>Section-Lot-Grave #: </strong>' + feature.properties.section + '-' + feature.properties.lot + '-' + feature.properties.grave_num + '</br>' + '<strong>Age: </strong>' + feature.properties.age + '</br>' + '<strong>Military: </strong>' + feature.properties.military + '</br>' + '<strong>Type: </strong>' + feature.properties.type + '</br>' + '</br>' +'<img src=' + '"' + feature.properties.url_photo + '"' + '/>');
      
      }
  
