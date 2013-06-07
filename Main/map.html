@@ -493,16 +493,23 @@ var zoom = new L.control.zoom();
 			var interment = graves._layers[each].feature.properties.interment_num;
 			var LatLng = graves._layers[each]._latlng;
 			var fullname = name + ", " + first + " " + middle;
-			var seclotgrave = section + " "+ lot + " " + gravenum;
+      var age = graves._layers[each].feature.properties.age;
+      var military = graves._layers[each].feature.properties.military;
+      var type = graves._layers[each].feature.properties.type;
+      var url = graves._layers[each].feature.properties.url_photo;
+      var popUp =  L.popup()
+                  .setLatLng(latlng)
+                  .setContent('<strong>Name: </strong>' + name + ',' + ' ' + first + '' + middle + '</br>' + '<strong>Section-Lot-Grave #: </strong>' + section + '-' + lot + '-' + gravenum + '</br>' + '<strong>Age: </strong>' + age + '</br>' + '<strong>Military: </strong>' + military + '</br>' + '<strong>Type: </strong>' + type + '</br>' + '</br>' +'<img src=' + '"' + url + '"' + '/>')
+                  .openOn(map);
 			// Populate states array and build autocomplete
-			states.push({label: fullname, value: fullname, seclotgrave: seclotgrave, LatLng: LatLng});
+			states.push({label: fullname, value: fullname, LatLng: LatLng, popUp: popUp});
 			
 			$( "#search" ).autocomplete({
 				source: states,
 				minLength: 3,
 				select: function( event, ui ) {
 					map.fitBounds([ui.item.LatLng]);
-          map.openPopup(popUp);
+          map.openPopup(ui.item.popUp);
 					}
 					
 			});
