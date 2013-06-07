@@ -499,8 +499,8 @@ var zoom = new L.control.zoom();
       var url = graves._layers[each].feature.properties.url_photo;
       var popUp =  L.popup()
                   .setLatLng(LatLng)
-                  .setContent('<strong>Name: </strong>' + name + ',' + ' ' + first + '' + middle + '</br>' + '<strong>Section-Lot-Grave #: </strong>' + section + '-' + lot + '-' + gravenum + '</br>' + '<strong>Age: </strong>' + age + '</br>' + '<strong>Military: </strong>' + military + '</br>' + '<strong>Type: </strong>' + type + '</br>' + '</br>' +'<img src=' + '"' + url + '"' + '/>')
-                  .openOn(map);
+                  .setContent('<strong>Name: </strong>' + name + ',' + ' ' + first + '' + middle + '</br>' + '<strong>Section-Lot-Grave #: </strong>' + section + '-' + lot + '-' + gravenum + '</br>' + '<strong>Age: </strong>' + age + '</br>' + '<strong>Military: </strong>' + military + '</br>' + '<strong>Type: </strong>' + type + '</br>' + '</br>' +'<img src=' + '"' + url + '"' + '/>');
+                  
 			// Populate states array and build autocomplete
 			states.push({label: fullname, value: fullname, LatLng: LatLng, popUp: popUp});
 			
