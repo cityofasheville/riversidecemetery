@@ -357,6 +357,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
 	  <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 	  <script src="../Main/js/Leaflet.markercluster-master/dist/leaflet.markercluster-src.js"></script>
+    <script src="../Main/js/leaflet-hash.js"></script>
     <script src="../Main/js/azgs-leaflet-master/js/azgs-leaflet/TileLayer.ESRI.js"></script>
 	  <script src="../Main/data/gravedata.json"></script>
     <script src="../Main/js/jquery.js"></script>
@@ -387,7 +388,7 @@ var map = L.map('map', {
 var zoom = new L.control.zoom();
           zoom.setPosition('topright').addTo(map);
           
-  
+ var hash = new L.Hash(map); 
           
 //Adding WMS layers from geoserver
 			
