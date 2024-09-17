@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Riverside Cemetery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="../Main/css/bootstrap.css" rel="stylesheet">
+  <link href="../Main/css/bootstrap-responsive.css" rel="stylesheet">
+  <!-- <link rel="SHORTCUT ICON" href="http://ashevillenc.gov/Portals/0/favicon.ico" /> -->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../Main/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../Main/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../Main/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="../Main/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="../Main/ico/favicon.png">
+</head>
+
+<body>
+
+<style>
+.gdiv {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 400ms ease-in-out;
+}
+tr {
+  height: 100px;
+}
+
+.gravestones {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.gdiv:hover {
+  width: 400%;
+  height: 400%;
+  position: relative;
+
+}
+</style>
+
+<table id="datatable" class="table table-striped display">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Section</th>
+            <th>Lot</th>
+            <th>Grave #</th>
+            <th>Interment #</th>
+            <th>Age</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Image</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Section</th>
+            <th>Lot</th>
+            <th>Grave #</th>
+            <th>Interment #</th>
+            <th>Age</th>
+            <th>Type</th>
+          </tr>
+        </tfoot>
+      </table>
+
+              <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../Main/js/jquery.js"></script>
+    <script src="../Main/js/bootstrap-transition.js"></script>
+    <script src="../Main/js/bootstrap-alert.js"></script>
+    <script src="../Main/js/bootstrap-modal.js"></script>
+    <script src="../Main/js/bootstrap-dropdown.js"></script>
+    <script src="../Main/js/bootstrap-scrollspy.js"></script>
+    <script src="../Main/js/bootstrap-tab.js"></script>
+    <script src="../Main/js/bootstrap-tooltip.js"></script>
+    <script src="../Main/js/bootstrap-popover.js"></script>
+    <script src="../Main/js/bootstrap-button.js"></script>
+    <script src="../Main/js/bootstrap-collapse.js"></script>
+    <script src="../Main/js/bootstrap-carousel.js"></script>
+    <script src="../Main/js/bootstrap-typeahead.js"></script>
+    <script src="../Main/js/jquery.dataTables.js"></script>
+    <script src="../Main/js/datatable.bootstrap.js"></script>
+    <script src="../Main/data/gravedata.js"></script>
+      <script>
+        var data = [];
+        for(grave of gravedata){
+          var last = grave.last_name;
+          var first = grave.first_name;
+          var middle = grave.middle_name;
+          var section = grave.section;
+          var lot = grave.lot;
+          var gravenum = grave.grave_num;
+          var interment = grave.interment_num;
+          var age = grave.age;
+          var url = grave.url_photo==null ? '' : '<div class="gdiv"><img class="gravestones" src=' + '"' + grave.url_photo + '"' + '/></div>' ;
+          var type = grave.type;
+          
+          data.push([url, last, first, middle, section, lot, gravenum, interment, age, type]);
+
+          $(document).ready(function() {
+              $('#datatable').dataTable( {
+                  "sPaginationType": "bootstrap",
+                  "aaData": data,
+            "bProcessing":true,
+            "bDeferRender": true,
+            "bRetrieve": true,
+            "iDisplayLength": 10,
+                  "aoColumns": [
+                { "sTitle": "Image"},
+                { "sTitle": "Last Name" },
+                { "sTitle": "First Name" },
+          { "sTitle": "Middle Name" },
+                { "sTitle": "Section", "sClass": "center" },
+                { "sTitle": "Lot", "sClass": "center" },
+                { "sTitle": "Grave #", "sClass": "center"},
+                { "sTitle": "Interment #", "sClass": "center"},
+                { "sTitle": "Age", "sClass": "center"},
+          { "sTitle": "Type" }
+            ]
+              } );
+          } );
+      
+        }
+        // THIS VERSION PULLS THE WHOLE TABLE FROM THE API ON EVERY PAGE LOAD
+        // let searchterm = "";
+        // // https://gis.ashevillenc.gov/server/rest/services/Parks/RiversideCemetery/FeatureServer/9/query?outFields=last_name%2C+first_name%2C+middle_name%2C+section%2C+lot%2C+grave_num%2C+interment_num%2C+age%2C+url_photo%2C+type&f=pjson&where=last_name+like+%27%25%27
+        // let url = "https://gis.ashevillenc.gov/server/rest/services/Parks/RiversideCemetery/FeatureServer/9/query?" + 
+        // "outFields=last_name%2C+first_name%2C+middle_name%2C+section%2C+lot%2C+grave_num%2C+interment_num%2C+age%2C+url_photo%2C+type&f=pjson&where=last_name+like+%27" +
+        // searchterm + "%25%27"
+        // $(document).ready(function () {
+        //   $('#datatable').dataTable({
+        //     "sPaginationType": "bootstrap",
+        //     "ajax": {
+        //       url: url,
+        //       type: 'POST',
+        //       dataType: 'JSON',
+        //       dataSrc: 'features'
+        //     },
+        //     "columns": [
+        //       {
+        //         data: 'attributes.url_photo',
+        //         render: function (data, type) {
+        //           if (data) {
+        //             return '<img src=' + '"' + data + '"' + '/>';
+        //           } else {
+        //             return '';
+        //           }
+        //         }
+        //       },
+        //       { data: 'attributes.last_name' },
+        //       { data: 'attributes.first_name' },
+        //       { data: 'attributes.middle_name' },
+        //       { data: 'attributes.section' },
+        //       { data: 'attributes.lot' },
+        //       { data: 'attributes.grave_num' },
+        //       { data: 'attributes.interment_num' },
+        //       { data: 'attributes.age' },
+        //       { data: 'attributes.type' }
+        //     ]
+        //     ,
+        //     "bProcessing": true,
+        //     "bDeferRender": true,
+        //     "bRetrieve": true,
+        //     "iDisplayLength": 10,
+        //   });
+        // });
+    
+      </script>
+
+</body>
+
+</html>
