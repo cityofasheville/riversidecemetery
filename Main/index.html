@@ -495,26 +495,25 @@
     <script src="../Main/js/bootstrap-typeahead.js"></script>
     <script src="../Main/js/jquery.dataTables.js"></script>
     <script src="../Main/js/datatable.bootstrap.js"></script>
-	<script src="../Main/data/gravedata.json"></script>
+	<script src="../Main/data/gravedata.js"></script>
     <script>
       !function ($) {
         $(function(){
           $('#myCarousel').carousel()
         })
       }(window.jQuery)
-	  
 	  var data = [];
-	  for(each in gravedata.features){
-			var last = gravedata.features[each].properties.last_name;
-			var first = gravedata.features[each].properties.first_name;
-			var middle = gravedata.features[each].properties.middle_name;
-			var section = gravedata.features[each].properties.section;
-			var lot = gravedata.features[each].properties.lot;
-			var gravenum = gravedata.features[each].properties.grave_num;
-			var interment = gravedata.features[each].properties.interment_num;
-			var age = gravedata.features[each].properties.age;
-			var url = gravedata.features[each].properties.url_photo;
-			var type = gravedata.features[each].properties.type;
+	  for(grave of gravedata){
+			var last = grave.last_name;
+			var first = grave.first_name;
+			var middle = grave.middle_name;
+			var section = grave.section;
+			var lot = grave.lot;
+			var gravenum = grave.grave_num;
+			var interment = grave.interment_num;
+			var age = grave.age;
+			var url = grave.url_photo==null ? '' : grave.url_photo;
+			var type = grave.type;
 			
 			data.push(['<img src=' + '"' + url + '"' + '/>', last, first, middle, section, lot, gravenum, interment, age, type]);
 
