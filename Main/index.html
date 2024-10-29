@@ -391,9 +391,9 @@
             var first = grave[8];
             var middle = grave[9];
             var section = grave[4];
-            var lot = parseInt(grave[5]);
-            var gravenum = parseInt(grave[6]);
-            var interment = parseInt(grave[3]);
+            var lot = grave[5] == "" ? '' : parseInt(grave[5]);
+            var gravenum = grave[6] == "" ? '' : parseInt(grave[6]);
+            var interment = grave[3] == "" ? '' : parseInt(grave[3]);
             var age = grave[13];
             var url = grave[20] == "" ? '' : '<div class="gdiv"><img class="gravestones" src=' + '"' + grave[20] + '"' + '/></div>';
             var type = grave[14];
