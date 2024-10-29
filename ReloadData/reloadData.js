@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default function reloadData() {
-  let data = 'var gravedata = [';
+  let data = '[';
   let url = "https://gis.ashevillenc.gov/server/rest/services/Parks/RiversideCemetery/FeatureServer/9/query?" +
     "where=last_name+like+%27%25%27&" +
     "outFields=section%2C+dob%2C+dod%2C+age%2C+lot%2C+last_name%2C+grave_num%2C+military%2C+url_photo%2C+interment_num%2C+first_name%2C+title%2C+type%2C+middle_name&" +
@@ -36,9 +36,9 @@ export default function reloadData() {
           y: feature.geometry.y
         });
       });
-      data += '];';
+      data += ']';
 
-      fs.writeFileSync(path.join(__dirname, '../Main/data/gravedata.js'), data, 'utf8');
+      fs.writeFileSync(path.join(__dirname, '../Main/data/gravedata.json'), data, 'utf8');
     })
     .catch(error => {
       console.log(error);
