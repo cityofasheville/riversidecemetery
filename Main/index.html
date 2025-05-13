@@ -1,324 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Riverside Cemetery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <head>
+    <meta charset="utf-8">
+    <title>Riverside Cemetery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Le styles -->
-  <link href="./css/bootstrap.css" rel="stylesheet">
-  <link href="./css/bootstrap-responsive.css" rel="stylesheet">
-  <!-- <link rel="SHORTCUT ICON" href="http://ashevillenc.gov/Portals/0/favicon.ico" /> -->
-  <link rel="SHORTCUT ICON" href="https://www.ashevillenc.gov/wp-content/uploads/2018/09/cropped-favicon-32x32.png" />
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- <link rel="SHORTCUT ICON" href="http://ashevillenc.gov/Portals/0/favicon.ico" /> -->
+    <link rel="SHORTCUT ICON" href="https://www.ashevillenc.gov/wp-content/uploads/2018/09/cropped-favicon-32x32.png" />
 
-  <style>
-    /* GLOBAL STYLES
+    <style>
+      /* GLOBAL STYLES
     -------------------------------------------------- */
-    /* Padding below the footer and lighter body text */
+      /* Padding below the footer and lighter body text */
 
-    body {
-      margin-left: 10px;
-      margin-right: 10px;
-      padding-bottom: 40px;
-      color: #5a5a5a;
-    }
+      body {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 40px;
+        color: #5a5a5a;
+      }
 
 
-    /* MARKETING CONTENT
+      /* MARKETING CONTENT
     -------------------------------------------------- */
 
-    /* Center align the text within the three columns below the carousel */
-    .marketing .span4 {
-      text-align: center;
-    }
+      /* Center align the text within the three columns below the carousel */
+      .marketing .span4 {
+        text-align: center;
+      }
 
-    .marketing h2 {
-      font-weight: normal;
-    }
+      .marketing h2 {
+        font-weight: normal;
+      }
 
-    .marketing .span4 p {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+      .marketing .span4 p {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
 
 
-    /* Featurettes
+      /* Featurettes
     ------------------------- */
 
-    .featurette-divider {
-      margin: 80px 0;
-      /* Space out the Bootstrap <hr> more */
-    }
-
-    .featurette {
-      padding-top: 120px;
-      /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden;
-      /* Vertically center images part 2: clear their floats. */
-    }
-
-    .featurette-image {
-      margin-top: -120px;
-      /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
-
-    /* Thin out the marketing headings */
-    .featurette-heading {
-      font-size: 50px;
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-    thead input {
-      width: 100%;
-      padding: 3px;
-      box-sizing: border-box;
-    }
-
-
-    /* RESPONSIVE CSS
-    -------------------------------------------------- */
-
-    @media (max-width: 979px) {
+      .featurette-divider {
+        margin: 80px 0;
+        /* Space out the Bootstrap <hr> more */
+      }
 
       .featurette {
-        height: auto;
-        padding: 0;
+        padding-top: 120px;
+        /* Vertically center images part 1: add padding above and below text. */
+        overflow: hidden;
+        /* Vertically center images part 2: clear their floats. */
       }
 
-      .featurette-image.pull-left,
+      .featurette-image {
+        margin-top: -120px;
+        /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+      }
+
+      /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+      .featurette-image.pull-left {
+        margin-right: 40px;
+      }
+
       .featurette-image.pull-right {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
-      }
-    }
-
-
-    @media (max-width: 767px) {
-
-      .marketing .span4+.span4 {
-        margin-top: 40px;
+        margin-left: 40px;
       }
 
+      /* Thin out the marketing headings */
       .featurette-heading {
-        font-size: 30px;
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -1px;
       }
 
-      .featurette .lead {
-        font-size: 18px;
-        line-height: 1.5;
+      thead input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
       }
 
-    }
 
-    /* Data Table
+      /* RESPONSIVE CSS
     -------------------------------------------------- */
-    .gdiv {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transition: all 400ms ease-in-out;
-    }
 
-    tr {
-      height: 60px;
-    }
+      @media (max-width: 979px) {
 
-    .gravestones {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
+        .featurette {
+          height: auto;
+          padding: 0;
+        }
 
-    .gdiv:hover {
-      width: 400%;
-      height: 400%;
-      position: relative;
+        .featurette-image.pull-left,
+        .featurette-image.pull-right {
+          display: block;
+          float: none;
+          max-width: 40%;
+          margin: 0 auto 20px;
+        }
+      }
 
-    }
-  </style>
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
+      @media (max-width: 767px) {
+
+        .marketing .span4+.span4 {
+          margin-top: 40px;
+        }
+
+        .featurette-heading {
+          font-size: 30px;
+        }
+
+        .featurette .lead {
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+      }
+
+      /* Data Table
+    -------------------------------------------------- */
+      .gdiv {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: all 400ms ease-in-out;
+      }
+
+      tr {
+        height: 60px;
+      }
+
+      .gravestones {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .gdiv:hover {
+        width: 400%;
+        height: 400%;
+        position: relative;
+
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
       <script src="../TESTSITE/js/html5shiv.js"></script>
     <![endif]-->
 
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="./ico/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="./ico/favicon.png">
-</head>
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="./ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="./ico/favicon.png">
+  </head>
 
-<body>
-  <img src="./img/riverside_spring.jpg" alt="">
-  <div class="container marketing">
-    <div class="featurette-heading">
-    <h1>Historic Riverside Cemetery</h1>
-    <p class="lead">Established 1885</p>
-    <p class="lead">City of Asheville</p>
-    <p class="lead">Parks and Recreation</p>
-	<h3 style="color:red">Riverside Cemetery experienced significant impact from Tropical Storm Helene and is closed except to those attending funeral services as crews remove debris and downed trees.</h3>
-  </div>
-  </div>
+  <body>
+    <img src="./img/riverside_spring.jpg" alt="">
+    <div class="container marketing">
+      <div>
+        <h1 class="featurette-heading">Historic Riverside Cemetery</h1>
+        <p>Established 1885 <span aria-hidden="true">|</span> City of Asheville <span aria-hidden="true">|</span> Parks
+          and Recreation</p>
+        <div class="alert alert-info" style="margin: 3rem 0;">
+          <h2>Riverside Cemetery is now open with some restrictions</h2>
+          <p>
+            Please proceed with caution, avoid fenced-in areas, root balls, and sinkholes.
+            Hours are subject to change, and future closures may be necessary for debris removal, repairs, and
+            contracted
+            work.
+            Thank you for your patience during our recovery process!
+          </p>
+        </div>
+
+      </div>
+    </div>
 
 
-  
-  <!-- Marketing messaging and featurettes
+
+    <!-- Marketing messaging and featurettes
     ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <div class="container marketing">
+    <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="span4">
-        <a href="http://avl.maps.arcgis.com/apps/webappviewer/index.html?id=5648cfede6f94ff2a57acd725ccca41c"><img
-            class="img-circle" src="http://farm8.staticflickr.com/7402/8759284922_9426528d22_b.jpg"></a>
-        <h2>Search the Map</h2>
-        <p><a class="btn"
-            href="http://avl.maps.arcgis.com/apps/webappviewer/index.html?id=5648cfede6f94ff2a57acd725ccca41c">View the
-            Map &raquo;</a></p>
-      </div><!-- /.span4 -->
-      <div class="span4">
-        <a href="http://arcg.is/1bn0rf"><img class="img-circle"
-            src="http://farm4.staticflickr.com/3668/8768925997_8cb7d6810a.jpg"></a>
-        <h2>Historic Tour</h2>
-        <p><a class="btn" href="http://arcg.is/1bn0rf">Take the Tour &raquo;</a></p>
-      </div><!-- /.span4 -->
-      <div class="span4">
-        <a href="#history"><img class="img-circle"
-            src="http://farm6.staticflickr.com/5338/8768926353_e82dc6f767.jpg"></a>
-        <h2>Records</h2>
-        <p><a class="btn" href="#records">View details &raquo;</a></p>
-      </div><!-- /.span4 -->
-    </div><!-- /.row -->
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <a href="http://avl.maps.arcgis.com/apps/webappviewer/index.html?id=5648cfede6f94ff2a57acd725ccca41c"><img
+              class="img-circle" src="http://farm8.staticflickr.com/7402/8759284922_9426528d22_b.jpg"></a>
+          <h2>Search the Map</h2>
+          <p><a class="btn"
+              href="http://avl.maps.arcgis.com/apps/webappviewer/index.html?id=5648cfede6f94ff2a57acd725ccca41c">View
+              the
+              Map &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <a href="http://arcg.is/1bn0rf"><img class="img-circle"
+              src="http://farm4.staticflickr.com/3668/8768925997_8cb7d6810a.jpg"></a>
+          <h2>Historic Tour</h2>
+          <p><a class="btn" href="http://arcg.is/1bn0rf">Take the Tour &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <a href="#history"><img class="img-circle"
+              src="http://farm6.staticflickr.com/5338/8768926353_e82dc6f767.jpg"></a>
+          <h2>Records</h2>
+          <p><a class="btn" href="#records">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
 
 
-    <!-- START THE FEATURETTES -->
+      <!-- START THE FEATURETTES -->
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="featurette" id="about">
-      <img class="featurette-image pull-right" src="http://farm6.staticflickr.com/5323/8773736462_6a780d3cfb.jpg">
-      <h2 class="featurette-heading">About.<span class="muted">riverside cemetery.</span></h2>
-      <p class="lead">Riverside Cemetery is not just a place where families come to visit a friend or a loved one. It is
-        a place of beauty - a place where you can walk, take photographs, paint and visit the grave sites of prominent
-        writers Thomas Wolfe and O. Henry. Walking Tours are available at the cemetery office and can offer a unique
-        journey into Asheville’s past. More than 4,000 visitors tour the cemetery each year. <br /><br />
-        City of Asheville’s Riverside Cemetery is located in the Montford <br /> Historic District, a short walk or
-        drive from downtown. The cemetery<br /> features more than 87 acres of landscaped grounds. The cemetery averages
-        approximately 50 services each year.<br /><br />
-        Services offered include grave sales, historical and genealogical research, cemetery tours, landscape
-        maintenance, and assistance with monument purchases. Call <span class="text-info">(828) 259-5800 </span>to
-        schedule an appointment.
-        (Riverside Cemetery is not currently transferring or selling new Lots at this time, we apologize for any
-        inconvenience.)
-      </p>
-    </div>
+      <div class="featurette" id="about">
+        <img class="featurette-image pull-right" src="http://farm6.staticflickr.com/5323/8773736462_6a780d3cfb.jpg">
+        <h2 class="featurette-heading">About.<span class="muted">riverside cemetery.</span></h2>
+        <p class="lead">Riverside Cemetery is not just a place where families come to visit a friend or a loved one. It
+          is
+          a place of beauty - a place where you can walk, take photographs, paint and visit the grave sites of prominent
+          writers Thomas Wolfe and O. Henry. Walking Tours are available at the cemetery office and can offer a unique
+          journey into Asheville’s past. More than 4,000 visitors tour the cemetery each year. <br /><br />
+          City of Asheville’s Riverside Cemetery is located in the Montford <br /> Historic District, a short walk or
+          drive from downtown. The cemetery<br /> features more than 87 acres of landscaped grounds. The cemetery
+          averages
+          approximately 50 services each year.<br /><br />
+          Services offered include grave sales, historical and genealogical research, cemetery tours, landscape
+          maintenance, and assistance with monument purchases. Call <span class="text-info">(828) 259-5800 </span>to
+          schedule an appointment.
+          (Riverside Cemetery is not currently transferring or selling new Lots at this time, we apologize for any
+          inconvenience.)
+        </p>
+      </div>
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="featurette" id="history">
-      <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
-      <h2 class="featurette-heading">History.<span class="muted">riverside cemetery.</span></h2>
-      <p class="lead">Riverside Cemetery was founded on August 4th, 1885 by the Asheville Cemetery Company. It was
-        planned as a garden style cemetery which would serve well as both a burial ground and public park. After almost
-        70 years of ownership, the Asheville Cemetery Company sold Riverside to the City of Asheville in 1952. The City
-        made many improvements to the cemetery, including opening new sections for interments and paving over 3.5 miles
-        of roads inside the cemetery gates. Riverside was named a Buncombe County Treasure Tree Preserve in 1997. Today,
-        we are operated by the City of Asheville Parks and Recreation Department.
-      </p>
-    </div>
+      <div class="featurette" id="history">
+        <img class="featurette-image pull-left" src="http://farm8.staticflickr.com/7370/8768926627_880a391222.jpg">
+        <h2 class="featurette-heading">History.<span class="muted">riverside cemetery.</span></h2>
+        <p class="lead">Riverside Cemetery was founded on August 4th, 1885 by the Asheville Cemetery Company. It was
+          planned as a garden style cemetery which would serve well as both a burial ground and public park. After
+          almost
+          70 years of ownership, the Asheville Cemetery Company sold Riverside to the City of Asheville in 1952. The
+          City
+          made many improvements to the cemetery, including opening new sections for interments and paving over 3.5
+          miles
+          of roads inside the cemetery gates. Riverside was named a Buncombe County Treasure Tree Preserve in 1997.
+          Today,
+          we are operated by the City of Asheville Parks and Recreation Department.
+        </p>
+      </div>
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="featurette" id="records">
-      <img class="featurette-image pull-right" src="http://farm8.staticflickr.com/7357/8768925555_6581451547.jpg">
-      <h2 class="featurette-heading">Records.<span class="muted">riverside cemetery.</span></h2>
-      <p class="lead">Search the Interment Files</p>
-      <table id="datatable" class="table table-striped display">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Middle Name</th>
-            <th>Section</th>
-            <th>Lot</th>
-            <th>Grave #</th>
-            <th>Interment #</th>
-            <th>Age</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>Image</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Middle Name</th>
-            <th>Section</th>
-            <th>Lot</th>
-            <th>Grave #</th>
-            <th>Interment #</th>
-            <th>Age</th>
-            <th>Type</th>
-          </tr>
-        </tfoot>
-      </table>
+      <div class="featurette" id="records">
+        <img class="featurette-image pull-right" src="http://farm8.staticflickr.com/7357/8768925555_6581451547.jpg">
+        <h2 class="featurette-heading">Records.<span class="muted">riverside cemetery.</span></h2>
+        <p class="lead">Search the Interment Files</p>
+        <table id="datatable" class="table table-striped display">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Section</th>
+              <th>Lot</th>
+              <th>Grave #</th>
+              <th>Interment #</th>
+              <th>Age</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Image</th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Section</th>
+              <th>Lot</th>
+              <th>Grave #</th>
+              <th>Interment #</th>
+              <th>Age</th>
+              <th>Type</th>
+            </tr>
+          </tfoot>
+        </table>
 
-    </div>
+      </div>
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="featurette" id="contact">
-      <img class="featurette-image pull-right" src="http://farm9.staticflickr.com/8554/8773735790_b58aeb70ce.jpg"">
+      <div class="featurette" id="contact">
+        <img class="featurette-image pull-right" src="http://farm9.staticflickr.com/8554/8773735790_b58aeb70ce.jpg"">
         <h2 class=" featurette-heading">Contact.<span class="muted">riverside cemetery.</span></h2>
-      <address>
-        </br>Riverside Cemetery
-        </br>53 Birch Street, Asheville, NC 28801
-        </br>Cemetery Hours: 8 a.m.-4:30 p.m., M-F
-        </br>Phone: (828) 259-5800
-        </br>E-mail: <a href="mailto:parks@ashevillenc.gov">parks@ashevillenc.gov</a>
-        </br>Gates are open everyday from:
+        <address>
+          </br>Riverside Cemetery
+          </br>53 Birch Street, Asheville, NC 28801
+          </br>Cemetery Hours: 8 a.m.-4:30 p.m., M-F
+          </br>Phone: (828) 259-5800
+          </br>E-mail: <a href="mailto:parks@ashevillenc.gov">parks@ashevillenc.gov</a>
+          </br>Gates are open everyday from:
+          </br>
+          <ul>
+            <li>7am-8pm April 1 - October 31</li>
+            <li>7am-6pm November 1 - March 31</li>
+          </ul>
+        </address>
         </br>
-        <ul>
-          <li>7am-8pm April 1 - October 31</li>
-          <li>7am-6pm November 1 - March 31</li>
-        </ul>
-      </address>
-      </br>
-      <p><strong>Riverside Cemetery is not currently transferring or selling new Lots at this time, we apologize for any
-          inconvenience.</strong></p>
-      <!-- <ul class="inline">
+        <p><strong>Riverside Cemetery is not currently transferring or selling new Lots at this time, we apologize for
+            any
+            inconvenience.</strong></p>
+        <!-- <ul class="inline">
 				<li><a href="http://www.ashevillenc.gov/Portals/0/city-documents/parks/parks_docs/riverside/riversidewalkingtour2012[1].pdf">Riverside Cemetery Walking Tour PDF</a></li>
 				<li><a href="http://www.ashevillenc.gov/Portals/0/city-documents/parks/parks_docs/riverside/walkingtourmap2012c[1].pdf">Riverside Cemetery Walking Map PDF</a></li>
 				<li><a href="./img/RiversideFees.pdf">Riverside Prices & Fees PDF</a></li>
 		   </ul> -->
-      </p>
-    </div>
+        </p>
+      </div>
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <!-- <div class="featurette" id="feedback">
+      <!-- <div class="featurette" id="feedback">
         <img class="featurette-image pull-left" src="https://lh5.googleusercontent.com/-PEoOOUcdKFo/AAAAAAAAAAI/AAAAAAAAAV4/lUA6opDd3kw/s250-c/photo.jpg">
         <h2 class="featurette-heading">Feedback.<span class="muted">help us help you.</span></h2>
         <p class="lead"><strong>Survey:</strong></p>
@@ -328,103 +345,106 @@
 
       <hr class="featurette-divider"> -->
 
-    <!-- /END THE FEATURETTES -->
+      <!-- /END THE FEATURETTES -->
 
 
-    <!-- FOOTER -->
-    <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2013 City of Asheville &middot; </p>
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 City of Asheville &middot; </p>
 
 
-          Links
-          <ul class="list-group list-group-horizontal">
-            <li class="list-group-item"><a href="http://www.ashevillenc.gov/">City of Asheville</a></li>
-            <li class="list-group-item"><a href="http://data.ashevillenc.gov/">Asheville Open Data Portal</a></li>
-            <li class="list-group-item"><a href="https://www.facebook.com/pages/Riverside-Cemetery/116156805072088">Join Us on Facebook</a></li>
-            <li class="list-group-item"><a href="http://www.flickr.com/photos/66019045@N04/sets/72157630529238250/">Photos on Flickr</a>
-            </li>
-            <li class="list-group-item"><a href="https://github.com/cityofasheville/riversidecemetery.git">Fork us on Github</a></li>
-          </ul>
+        Links
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item"><a href="http://www.ashevillenc.gov/">City of Asheville</a></li>
+          <li class="list-group-item"><a href="http://data.ashevillenc.gov/">Asheville Open Data Portal</a></li>
+          <li class="list-group-item"><a href="https://www.facebook.com/pages/Riverside-Cemetery/116156805072088">Join
+              Us on Facebook</a></li>
+          <li class="list-group-item"><a href="http://www.flickr.com/photos/66019045@N04/sets/72157630529238250/">Photos
+              on Flickr</a>
+          </li>
+          <li class="list-group-item"><a href="https://github.com/cityofasheville/riversidecemetery.git">Fork us on
+              Github</a></li>
+        </ul>
 
-    </footer>
+      </footer>
 
-  </div><!-- /.container -->
+    </div><!-- /.container -->
 
 
 
-  <!-- Le javascript
+    <!-- Le javascript
     ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="./js/jquery.js"></script>
-  <script src="./js/bootstrap-transition.js"></script>
-  <script src="./js/bootstrap-alert.js"></script>
-  <script src="./js/bootstrap-modal.js"></script>
-  <script src="./js/bootstrap-dropdown.js"></script>
-  <script src="./js/bootstrap-scrollspy.js"></script>
-  <script src="./js/bootstrap-tab.js"></script>
-  <script src="./js/bootstrap-tooltip.js"></script>
-  <script src="./js/bootstrap-popover.js"></script>
-  <script src="./js/bootstrap-button.js"></script>
-  <script src="./js/bootstrap-collapse.js"></script>
-  <script src="./js/bootstrap-carousel.js"></script>
-  <script src="./js/bootstrap-typeahead.js"></script>
-  <script src="./js/jquery.dataTables.js"></script>
-  <script src="./js/datatable.bootstrap.js"></script>
-  <script>
-    !function ($) {
-      $(function () {
-        $('#myCarousel').carousel()
-      })
-    }(window.jQuery)
-  </script>
-  <script src="./js/holder.js"></script>
-  <script>
-    $(document).ready(function () {
-      fetch(" ./data/gravedata.csv")
-        .then(response => response.text())
-        .then(gravedata => {
-          gravedata = gravedata.split('\n').map(row => row.split(',')).slice(0, -1);
-          gravedata = gravedata
-          var data = [];
-          for (grave of gravedata) {
-            var last = grave[7];
-            var first = grave[8];
-            var middle = grave[9];
-            var section = grave[4];
-            var lot = grave[5] == "" ? '' : parseInt(grave[5]);
-            var gravenum = grave[6] == "" ? '' : parseInt(grave[6]);
-            var interment = grave[3] == "" ? '' : parseInt(grave[3]);
-            var age = grave[13];
-            var url = grave[20] == "" ? '' : '<div class="gdiv"><img class="gravestones" src=' + '"' + grave[20] + '"' + '/></div>';
-            var type = grave[14];
-            console.log([url, last, first, middle, section, lot, gravenum, interment, age, type]);
-            data.push([url, last, first, middle, section, lot, gravenum, interment, age, type]);
-          };
-          $('#datatable').dataTable({
-            "sPaginationType": "bootstrap",
-            "aaData": data,
-            "bProcessing": true,
-            "bDeferRender": true,
-            "bRetrieve": true,
-            "iDisplayLength": 10,
-            "aoColumns": [
-              { "sTitle": "Image" },
-              { "sTitle": "Last Name" },
-              { "sTitle": "First Name" },
-              { "sTitle": "Middle Name" },
-              { "sTitle": "Section", "sClass": "center" },
-              { "sTitle": "Lot", "sClass": "center" },
-              { "sTitle": "Grave #", "sClass": "center" },
-              { "sTitle": "Interment #", "sClass": "center" },
-              { "sTitle": "Age", "sClass": "center" },
-              { "sTitle": "Type" }
-            ]
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap-transition.js"></script>
+    <script src="./js/bootstrap-alert.js"></script>
+    <script src="./js/bootstrap-modal.js"></script>
+    <script src="./js/bootstrap-dropdown.js"></script>
+    <script src="./js/bootstrap-scrollspy.js"></script>
+    <script src="./js/bootstrap-tab.js"></script>
+    <script src="./js/bootstrap-tooltip.js"></script>
+    <script src="./js/bootstrap-popover.js"></script>
+    <script src="./js/bootstrap-button.js"></script>
+    <script src="./js/bootstrap-collapse.js"></script>
+    <script src="./js/bootstrap-carousel.js"></script>
+    <script src="./js/bootstrap-typeahead.js"></script>
+    <script src="./js/jquery.dataTables.js"></script>
+    <script src="./js/datatable.bootstrap.js"></script>
+    <script>
+      !function ($) {
+        $(function () {
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="./js/holder.js"></script>
+    <script>
+      $(document).ready(function () {
+        fetch(" ./data/gravedata.csv")
+          .then(response => response.text())
+          .then(gravedata => {
+            gravedata = gravedata.split('\n').map(row => row.split(',')).slice(0, -1);
+            gravedata = gravedata
+            var data = [];
+            for (grave of gravedata) {
+              var last = grave[7];
+              var first = grave[8];
+              var middle = grave[9];
+              var section = grave[4];
+              var lot = grave[5] == "" ? '' : parseInt(grave[5]);
+              var gravenum = grave[6] == "" ? '' : parseInt(grave[6]);
+              var interment = grave[3] == "" ? '' : parseInt(grave[3]);
+              var age = grave[13];
+              var url = grave[20] == "" ? '' : '<div class="gdiv"><img class="gravestones" src=' + '"' + grave[20] + '"' + '/></div>';
+              var type = grave[14];
+              console.log([url, last, first, middle, section, lot, gravenum, interment, age, type]);
+              data.push([url, last, first, middle, section, lot, gravenum, interment, age, type]);
+            };
+            $('#datatable').dataTable({
+              "sPaginationType": "bootstrap",
+              "aaData": data,
+              "bProcessing": true,
+              "bDeferRender": true,
+              "bRetrieve": true,
+              "iDisplayLength": 10,
+              "aoColumns": [
+                { "sTitle": "Image" },
+                { "sTitle": "Last Name" },
+                { "sTitle": "First Name" },
+                { "sTitle": "Middle Name" },
+                { "sTitle": "Section", "sClass": "center" },
+                { "sTitle": "Lot", "sClass": "center" },
+                { "sTitle": "Grave #", "sClass": "center" },
+                { "sTitle": "Interment #", "sClass": "center" },
+                { "sTitle": "Age", "sClass": "center" },
+                { "sTitle": "Type" }
+              ]
+            });
           });
-        });
-    });
+      });
 
-  </script>
-</body>
+    </script>
+  </body>
 
 </html>
